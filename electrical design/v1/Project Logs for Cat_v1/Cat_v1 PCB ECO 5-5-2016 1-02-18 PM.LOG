@@ -1,0 +1,4 @@
+Change Component DesignItemId : Designator=U3 Old DesignItemId=CMP-0055-01450-2 New DesignItemId=CMP-0055-00557-2
+Change Component Footprint: Designator=U3 Old Footprint=MUA08A_L New Footprint=M08A_L
+Change Component Comment : Designator=U3 Old Comment=LMV358MM/NOPB New Comment=LMV358MX
+Added Member To Class: ClassName=Cat_v1 Member=Component D1 DIO/Schottky

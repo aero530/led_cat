@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=NetR27_1 Pin=U2-1
+Removed Pin From Net: NetName=VCC Pin=U2-2
+Removed Pin From Net: NetName=GND Pin=U2-3
+Removed Pin From Net: NetName=3.3V Pin=U2-4
+Removed Pin From Net: NetName=GND Pin=U2-5
+Removed Pin From Net: NetName=GND Pin=U2-6
+Removed Member From Class: ClassName=Cat_v1 Member=U2
+Added Pin To Net: NetName=NetR27_1 Pin=U7-1
+Added Pin To Net: NetName=VCC Pin=U7-2
+Added Pin To Net: NetName=3.3V Pin=U7-3
+Added Pin To Net: NetName=GND Pin=U7-4
+Added Pin To Net: NetName=GND Pin=U7-5

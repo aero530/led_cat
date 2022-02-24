@@ -1,0 +1,68 @@
+Removed Pin From Net: NetName=VCC/2 Pin=U?-1
+Removed Pin From Net: NetName=VCC/2 Pin=U?-2
+Removed Pin From Net: NetName=NetC?_2 Pin=U?-3
+Removed Pin From Net: NetName=GND Pin=U?-4
+Removed Pin From Net: NetName=3.3V Pin=U?-8
+Change Component Designator: OldDesignator=C? NewDesignator=C32
+Change Component Designator: OldDesignator=C? NewDesignator=C33
+Change Component Designator: OldDesignator=C? NewDesignator=C34
+Change Component Designator: OldDesignator=C? NewDesignator=C35
+Change Component Designator: OldDesignator=C? NewDesignator=C36
+Change Component Designator: OldDesignator=MIC? NewDesignator=MIC1
+Change Component Designator: OldDesignator=R? NewDesignator=R18
+Change Component Designator: OldDesignator=R? NewDesignator=R19
+Change Component Designator: OldDesignator=R? NewDesignator=R20
+Change Component Designator: OldDesignator=R? NewDesignator=R21
+Change Component Designator: OldDesignator=R? NewDesignator=R22
+Change Component Designator: OldDesignator=R? NewDesignator=R23
+Change Component Designator: OldDesignator=R? NewDesignator=R24
+Change Component Designator: OldDesignator=R? NewDesignator=R25
+Change Component Designator: OldDesignator=R? NewDesignator=R26
+Change Component Designator: OldDesignator=SP? NewDesignator=SP1
+Change Component Designator: OldDesignator=SP? NewDesignator=SP2
+Change Component Designator: OldDesignator=U? NewDesignator=U1
+Change Component Designator: OldDesignator=U? NewDesignator=U3
+Added Pin To Net: NetName=VCC/2 Pin=U3-1
+Added Pin To Net: NetName=VCC/2 Pin=U3-2
+Added Pin To Net: NetName=NetC?_2 Pin=U3-3
+Change Net Name : Old Net Name=NetC?_1 New Net Name=NetC34_1
+Change Net Name : Old Net Name=NetC?_2 New Net Name=NetC35_2
+Change Net Name : Old Net Name=NetR?_1 New Net Name=NetR21_1
+Change Net Name : Old Net Name=NetR?_2 New Net Name=NetR18_2
+Change Net Name : Old Net Name=NetSP?_1 New Net Name=NetSP1_1
+Change Net Name : Old Net Name=NetSP?_2 New Net Name=NetSP1_2
+Added Pin To Net: NetName=NetC32_2 Pin=C32-2
+Added Pin To Net: NetName=NetC32_2 Pin=R19-1
+Added Net: Name=NetC32_2
+Added Pin To Net: NetName=NetC33_2 Pin=C33-2
+Added Pin To Net: NetName=NetC33_2 Pin=R23-1
+Added Net: Name=NetC33_2
+Added Pin To Net: NetName=NetC34_2 Pin=C34-2
+Added Pin To Net: NetName=NetC34_2 Pin=R22-1
+Added Net: Name=NetC34_2
+Added Pin To Net: NetName=NetC36_2 Pin=C36-2
+Added Pin To Net: NetName=NetC36_2 Pin=R24-2
+Added Pin To Net: NetName=NetC36_2 Pin=R26-2
+Added Pin To Net: NetName=NetC36_2 Pin=U1-6
+Added Net: Name=NetC36_2
+Added Pin To Net: NetName=NetR19_2 Pin=R19-2
+Added Pin To Net: NetName=NetR19_2 Pin=U1-4
+Added Net: Name=NetR19_2
+Added Pin To Net: NetName=NetR23_2 Pin=R23-2
+Added Pin To Net: NetName=NetR23_2 Pin=U1-3
+Added Net: Name=NetR23_2
+Added Member To Class: ClassName=Cat_v1 Member=Component C32 Capacitor
+Added Member To Class: ClassName=Cat_v1 Member=Component C33 Capacitor
+Added Member To Class: ClassName=Cat_v1 Member=Component C34 Capacitor
+Added Member To Class: ClassName=Cat_v1 Member=Component C36 Capacitor
+Added Member To Class: ClassName=Cat_v1 Member=Component D1 DIO/Schottky
+Added Member To Class: ClassName=Cat_v1 Member=Component R18 Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component R19 Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component R20 Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component R21 Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component R22 Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component R23 Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component R24 Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component R26 Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component SP1 Speaker
+Added Member To Class: ClassName=Cat_v1 Member=Component U1 TPA2005D1DGNRG4

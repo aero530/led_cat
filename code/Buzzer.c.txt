@@ -1,0 +1,233 @@
+/*!
+	\file Buzzer.c
+	
+	Buzzer Library used to simplify the interface between the PWM library and
+	the main code. The goal is the be specific for the:
+				Atmel XMEGA16D4
+	as pin mapped by the backplane in schematic SDS Backplane REV A.01
+	
+	Table is indexed by mode to select the operating freq and duty cycle
+
+	| Mode  |    count    |   max_count  |   &tune   | &start_tune | Function                                     |
+	| ----: | :---------: | :----------: | :-------: | :---------: | :------------------------------------------- |
+	| 0x00  |      n      |      0       |    off    |     off     | Turns off the buzzer                         |
+	| 0x01  |      n      |      0       | const. HI |  const. HI  | Buzzes at a constant rate A                  |
+	| 0x02  |      n      |      0       | const. LO |  const. LO  | Buzzes lower so as to not annoy neighbors    |
+	| 0x03  |      n      |      20      |test melody| test melody | Tests the functionality of the "tune engine" |
+	
+*/
+
+#include "Buzzer.h"
+
+//=============================================================================
+//							Playable Tunes
+//=============================================================================
+/*!
+	\var static uint16_t tune_off[1]
+	
+	constant off tune
+*/
+static uint16_t tune_off[1] = {0};
+/*!
+	\var static uint16_t tune_const_hi[1]
+	
+	constant high pitched tune
+*/
+static uint16_t tune_const_hi[1] = {4500};
+/*!
+	\var static uint16_t tune_const_lo[1]
+	
+	constant low pitch tune
+*/
+static uint16_t tune_const_lo[1] = {500};
+/*!
+	\var static uint16_t tune_test_melody[20]
+	
+	test tune that modulates the sound from buzzer
+*/
+static uint16_t tune_test_melody[20] ={note_c,note_c,note_c,note_c,note_c,
+									   note_a,note_a,note_a,note_a,note_a,
+									   note_d,note_d,note_d,note_d,note_d,
+									   note_g,note_g,note_g,note_g,note_g};
+//=============================================================================
+
+//prototypes
+static inline void buzzer_refresh_timer_init(void);
+static void buzzer_refresh_overflowHandler(void);
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//                                Private Members
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*! 
+	\var static uint16_t modeTable[NUM_MODES][4]
+	
+	Implements the table described 
+ */
+static uint16_t modeTable[NUM_MODES][4] = {
+	{0,0,0,0},
+	{0,0,0,0},
+	{0,0,0,0},
+	{0,20,0,0}
+};
+
+/*!
+	\var static struct pwm_config pwm_cfg
+	
+	holds the ASF PWM information to control the buzzer hardware
+*/
+static struct pwm_config pwm_cfg;
+/*!
+	\private
+	\var static uint8_t currentMode
+	
+	holds the current operation mode for the buzzer
+*/
+static uint8_t currentMode = 0;
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//                                Public Functions
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*!
+	\fn void buzzer_init(void)
+	
+	Initializes the Buzzer on the Backplane
+	
+	\param none
+	\return none
+*/
+void buzzer_init(void){
+	//initialize the pwm of the buzzer & set buzzer to initial freq of zero to 
+	//	turn off
+	pwm_init(&pwm_cfg,BUZZER_TIMER,BUZZER_PWM_CH,0);
+	//set the buzzer to initial duty of zero to turn off
+	pwm_start(&pwm_cfg,0);
+	
+	//set initial mode to off
+	currentMode = 0;
+	
+	//initialize the mode table
+	modeTable[0][2] = (uint16_t)(tune_off);
+	modeTable[0][3] = (uint16_t)(tune_off);
+	modeTable[1][2] = (uint16_t)(tune_const_hi);
+	modeTable[1][3] = (uint16_t)(tune_const_hi);
+	modeTable[2][2] = (uint16_t)(tune_const_lo);
+	modeTable[2][3] = (uint16_t)(tune_const_lo);
+	modeTable[3][2] = (uint16_t)(tune_test_melody);
+	modeTable[3][3] = (uint16_t)(tune_test_melody);
+	
+	//start refresh timer which will update the buzzer based off of the mode
+	buzzer_refresh_timer_init();
+}
+
+/*!
+	\fn uint8_t buzzer_setMode(uint8_t mode)
+	\brief Sets mode of buzzer
+	
+	Sets the mode of operation of the buzzer relative to the table described in this 
+	file. If the mode is the current mode then no change will be sent to the PWM.
+	
+	\param mode is the mode used to select tune. See table for information
+	\return 1 if mode input was different from current mode. 0 if same, and
+			-1 if the mode was out of bounds. (Will not change state if out
+			of bounds)
+*/
+uint8_t buzzer_setMode(uint8_t mode){
+	//if there is a difference in mode then lookup freq and duty data
+	if(mode == currentMode){
+		return 0;
+	}else if(mode >= NUM_MODES){
+		return -1;
+	}else{
+		//save new mode as current
+		currentMode = mode;
+		return 1;
+	}
+}
+
+/*!
+	\fn uint8_t Buzzer_getMode(void)
+	
+	Gets the current mode that is being run by the buzzer.
+	
+	\param none
+	\return mode as enumerated in the mode table
+*/
+uint8_t Buzzer_getMode(void){
+	return currentMode;
+}
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//                          Private "Utility" Functions
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*!
+	\fn static inline void buzzer_refresh_timer_init(void)
+	\brief Initializes the buzzer refresh timer
+	
+	initializes and starts the buzzer refresh timer to make the buzzer play 
+	various notes in a mode as opposed to a single note
+	
+	\param none
+	\return none
+*/
+static inline void buzzer_refresh_timer_init(void){
+	tc_enable(&BUZZER_REFRESH_TIMER);
+	tc_set_overflow_interrupt_callback(&BUZZER_REFRESH_TIMER, buzzer_refresh_overflowHandler);
+	tc_set_wgm(&BUZZER_REFRESH_TIMER, TC_WG_NORMAL);
+	uint32_t period = (sysclk_get_per_hz() / BUZZER_TIMER_DIV / BUZZER_TIMER_RATE); 
+	tc_write_period(&BUZZER_REFRESH_TIMER,period);
+	tc_set_overflow_interrupt_level(&BUZZER_REFRESH_TIMER, TC_INT_LVL_HI);
+	tc_write_clock_source(&BUZZER_REFRESH_TIMER,TC_CLKSEL_DIV1024_gc);
+}
+
+/*!
+	\fn static void buzzer_refresh_overflowHandler(void)
+	\brief Interrupt callback for refresh timer overflow
+	
+	Interrupt callback routine when the buzzer refresh timer overflows. this is 
+	the "tune engine" that will switch the notes based off of the array given. 
+	If mode is off (0) then it will turn off the buzzer.
+	
+	\param none
+	\return none
+*/
+static void buzzer_refresh_overflowHandler(void){
+	
+	if(currentMode != 0){
+		//get counter (index) for note
+		uint16_t count = modeTable[currentMode][0];
+		//get the size of tune
+		uint16_t max_count = modeTable[currentMode][1];
+		//get the tune buffer
+		uint16_t *tune_ptr = (uint16_t *)(modeTable[currentMode][2]);
+	
+		//play tune at frequency
+		pwm_stop(&pwm_cfg);
+		pwm_set_frequency(&pwm_cfg,*tune_ptr);
+		if(*tune_ptr != note_REST){
+			//supply sound wave
+			pwm_start(&pwm_cfg,50);
+		}else{
+			//keep system off
+		}
+	
+		//increment the counter and pointer to get to next note
+		count++;
+		tune_ptr++;
+	
+		//check to see if just played last note so that the next note is restart
+		if(count > max_count){
+			count = 0;
+			tune_ptr = (uint16_t *)(modeTable[currentMode][3]);
+		}
+	
+		//set new values into the array for next refresh
+		modeTable[currentMode][0] = count;
+		modeTable[currentMode][2] = (uint16_t)(tune_ptr);
+	}else{
+		//special case for turn off where we shutoff pwm
+		pwm_stop(&pwm_cfg);
+	}
+}

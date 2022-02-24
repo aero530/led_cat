@@ -1,0 +1,77 @@
+/*!
+	\file Buzzer.h
+	
+	Buzzer Library used to simplify the interface between the PWM library and
+	the main code. The goal is the be specific for the:
+				Atmel XMEGA16D4
+	as pin mapped by the backplane in schematic SDS Backplane REV A.01
+	
+	Table is indexed by mode to select the operating freq and duty cycle
+
+	| Mode  |    count    |   max_count  |   &tune   | &start_tune | Function                                     |
+	| ----: | :---------: | :----------: | :-------: | :---------: | :------------------------------------------- |
+	| 0x00  |      n      |      0       |    off    |     off     | Turns off the buzzer                         |
+	| 0x01  |      n      |      0       | const. HI |  const. HI  | Buzzes at a constant rate A                  |
+	| 0x02  |      n      |      0       | const. LO |  const. LO  | Buzzes lower so as to not annoy neighbors    |
+	| 0x03  |      n      |      20      |test melody| test melody | Tests the functionality of the "tune engine" |
+	
+*/
+
+#ifndef INCLUDE_BUZZER_H
+#define INCLUDE_BUZZER_H
+	//needs the PWM library in order to function properly
+	#include <asf.h>
+	
+	//timer based buzzer refresh
+	#define BUZZER_TIMER_DIV  1024 /*! Refresh Timer Clock Division Amount */
+	#define BUZZER_TIMER_RATE 60   /*! Refresh Timer Clock overflow rate 60Hz */
+
+	//must be changed when new modes are added
+	#define NUM_MODES 4 /*! Defines the number of modes buzzer can perform */
+	
+	//notes
+	#define note_c 261 /*! c note at first octave */
+	#define note_d 294 /*! d note at first octave */
+	#define note_e 329 /*! e note at first octave */
+	#define note_f 349 /*! f note at first octave */
+	#define note_g 392 /*! g note at first octave */
+	#define note_a 440 /*! a note at first octave */
+	#define note_b 493 /*! b note at first octave */
+	#define note_C 523 /*! c note at second octave */
+	#define note_REST 0 /*! rest note (no sound) */
+
+	/*!
+		\fn void buzzer_init(void)
+	
+		Initializes the Buzzer on the Backplane
+	
+		\param none
+		\return none
+	*/
+	void buzzer_init(void);
+	
+	/*!
+		\fn uint8_t buzzer_setMode(uint8_t mode)
+		\brief Sets mode of buzzer
+	
+		Sets the mode of operation of the buzzer relative to the table described in this 
+		file. If the mode is the current mode then no change will be sent to the PWM.
+	
+		\param mode is the mode used to select tune. See table for information
+		\return 1 if mode input was different from current mode. 0 if same, and
+				-1 if the mode was out of bounds. (Will not change state if out
+				of bounds)
+	*/
+	uint8_t buzzer_setMode(uint8_t mode);
+	
+	/*!
+		\fn uint8_t Buzzer_getMode(void)
+	
+		Gets the current mode that is being run by the buzzer.
+	
+		\param none
+		\return mode as enumerated in the mode table
+	*/
+	uint8_t Buzzer_getMode(void);
+	
+#endif

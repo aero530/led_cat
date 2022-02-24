@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=VCC Pin=SW1-2
+Removed Pin From Net: NetName=VIN Pin=SW1-3
+Removed Pin From Net: NetName=VCC Pin=SW1-5
+Removed Pin From Net: NetName=VIN Pin=SW1-6
+Added Pin To Net: NetName=VIN Pin=SW1-2
+Added Pin To Net: NetName=VCC Pin=SW1-3
+Added Pin To Net: NetName=VIN Pin=SW1-5
+Added Pin To Net: NetName=VCC Pin=SW1-6

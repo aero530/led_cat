@@ -1,0 +1,32 @@
+Removed Pin From Net: NetName=3.3V Pin=D10-A
+Removed Pin From Net: NetName=3.3V Pin=D11-A
+Removed Member From Class: ClassName=Cat_v1 Member=D10
+Removed Member From Class: ClassName=Cat_v1 Member=D11
+Added Component: Designator=R27(RESC_MET_1608N)
+Added Component: Designator=R28(RESC_MET_1608N)
+Added Component: Designator=TP23(TP/SMT30x30SQ)
+Added Component: Designator=TP24(TP/SMT30x30SQ)
+Added Component: Designator=TP25(TP/SMT30x30SQ)
+Added Component: Designator=TP26(TP/SMT30x30SQ)
+Added Pin To Net: NetName=D11 Pin=R17-2
+Added Pin To Net: NetName=D9 Pin=R27-2
+Added Pin To Net: NetName=D8 Pin=R28-2
+Added Pin To Net: NetName=D11 Pin=TP24-1
+Added Pin To Net: NetName=D9 Pin=TP25-1
+Added Pin To Net: NetName=D8 Pin=TP26-1
+Added Pin To Net: NetName=D17 Pin=R16-2
+Added Pin To Net: NetName=D17 Pin=TP23-1
+Added Pin To Net: NetName=D17 Pin=U4-8
+Added Net: Name=D17
+Added Pin To Net: NetName=TOUCH_OUT Pin=R16-1
+Added Pin To Net: NetName=TOUCH_OUT Pin=R17-1
+Added Pin To Net: NetName=TOUCH_OUT Pin=R27-1
+Added Pin To Net: NetName=TOUCH_OUT Pin=R28-1
+Added Pin To Net: NetName=TOUCH_OUT Pin=U4-22
+Added Net: Name=TOUCH_OUT
+Added Member To Class: ClassName=Cat_v1 Member=Component R27 Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component R28 Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component TP23 TP/Standard
+Added Member To Class: ClassName=Cat_v1 Member=Component TP24 TP/Standard
+Added Member To Class: ClassName=Cat_v1 Member=Component TP25 TP/Standard
+Added Member To Class: ClassName=Cat_v1 Member=Component TP26 TP/Standard

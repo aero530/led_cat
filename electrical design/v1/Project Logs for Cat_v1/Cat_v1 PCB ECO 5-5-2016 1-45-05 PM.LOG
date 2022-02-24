@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=SPEAKER_EN Pin=TP11-1
+Removed Pin From Net: NetName=SPEAKER_EN Pin=U4-25
+Added Pin To Net: NetName=SPEAKER_EN Pin=TP17-1
+Added Pin To Net: NetName=SPEAKER_EN Pin=U4-30
+Added Pin To Net: NetName=D4 Pin=TP11-1
+Added Pin To Net: NetName=D4 Pin=U4-25
+Added Net: Name=D4

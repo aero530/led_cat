@@ -1,0 +1,5 @@
+Change Component Designator: OldDesignator=D1 NewDesignator=D11
+Added Pin To Net: NetName=SOUND Pin=TP2-1
+Added Pin To Net: NetName=SOUND Pin=U4-40
+Change Net Name : Old Net Name=NetD1_A New Net Name=NetD11_A
+Added Member To Class: ClassName=Cat_v1 Member=Component D11 DIO/Schottky

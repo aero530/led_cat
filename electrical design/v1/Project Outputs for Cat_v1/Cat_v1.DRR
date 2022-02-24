@@ -1,0 +1,22 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Cat_v1.PcbDoc   5/28/2016  3:43:12 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top to Bottom
+ASCII RoundHoles File : Cat_v1.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      12mil (0.305mm)                                           Round             648       PTH        76.57inch (1944.79mm)
+T2      16mil (0.406mm)                                           Round             4         PTH        6.08inch (154.37mm)
+T3      20mil (0.508mm)                                           Round             5         PTH        0.56inch (14.28mm)
+T4      28mil (0.701mm)                                           Round             2         PTH        0.16inch (4.15mm)
+T5      30mil (0.759mm)                                           Round             3         PTH        0.17inch (4.45mm)
+T6      30mil (0.762mm)                                           Round             5         PTH        6.18inch (156.93mm)
+T7      32mil (0.8mm)                                             Round             15        PTH        7.82inch (198.61mm)
+T8      39mil (1.001mm)                                           Round             2         PTH        0.30inch (7.60mm)
+T9      190mil (4.826mm)                                          Round             1         PTH        0.00inch (0.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              685
+
+Total Processing Time (hh:mm:ss) : 00:00:01

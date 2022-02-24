@@ -1,0 +1,9 @@
+Added Component: Designator=WH1(24AWG HOLE)
+Added Component: Designator=WH2(24AWG HOLE)
+Added Component: Designator=WH3(24AWG HOLE)
+Added Pin To Net: NetName=VCC Pin=WH1-1
+Added Pin To Net: NetName=3.3V Pin=WH2-1
+Added Pin To Net: NetName=GND Pin=WH3-1
+Added Member To Class: ClassName=Cat_v1 Member=Component WH1 WIRE_HOLE
+Added Member To Class: ClassName=Cat_v1 Member=Component WH2 WIRE_HOLE
+Added Member To Class: ClassName=Cat_v1 Member=Component WH3 WIRE_HOLE

@@ -1,0 +1,108 @@
+Removed Pin From Net: NetName=GND Pin=C8-1
+Removed Pin From Net: NetName=5V Pin=C8-2
+Removed Pin From Net: NetName=5V Pin=J2-1
+Removed Pin From Net: NetName=5V Pin=SW1-3
+Removed Pin From Net: NetName=5V Pin=U4-7
+Added Component: Designator=C?(CAPC_MET_1608N)
+Added Component: Designator=C?(CAPC_MET_1608N)
+Added Component: Designator=C?(CAPC_MET_1608N)
+Added Component: Designator=C?(CAPC_MET_1608N)
+Added Component: Designator=C?(CAPC_MET_1608N)
+Added Component: Designator=D1(SMA/DO-214AC_wide)
+Added Component: Designator=MIC?(SPQ1410HR5H-B)
+Added Component: Designator=R?(RESC_MET_1608N)
+Added Component: Designator=R?(RESC_MET_1608N)
+Added Component: Designator=R?(RESC_MET_1608N)
+Added Component: Designator=R?(RESC_MET_1608N)
+Added Component: Designator=R?(RESC_MET_1608N)
+Added Component: Designator=R?(RESC_MET_1608N)
+Added Component: Designator=R?(RESC_MET_1608N)
+Added Component: Designator=R?(RESC_MET_1608N)
+Added Component: Designator=R?(RESC_MET_1608N)
+Added Component: Designator=SP?(SPEAKER/15MM)
+Added Component: Designator=SP?(SPEAKER/15X15X5)
+Added Component: Designator=U?(MUA08A_L)
+Added Component: Designator=U?(MUA08A_L)
+Added Component: Designator=U?(TI-DGN8-1760X1425TP_N)
+Added Pin To Net: NetName=5V Pin=C8-1
+Added Pin To Net: NetName=GND Pin=C8-2
+Added Pin To Net: NetName=GND Pin=C?-1
+Added Pin To Net: NetName=GND Pin=C?-1
+Added Pin To Net: NetName=GND Pin=C?-1
+Added Pin To Net: NetName=5V Pin=D1-K
+Added Pin To Net: NetName=3.3V Pin=MIC?-1
+Added Pin To Net: NetName=GND Pin=MIC?-2
+Added Pin To Net: NetName=GND Pin=MIC?-3
+Added Pin To Net: NetName=3.3V Pin=R?-1
+Added Pin To Net: NetName=3.3V Pin=R?-1
+Added Pin To Net: NetName=5V Pin=R?-1
+Added Pin To Net: NetName=GND Pin=R?-1
+Added Pin To Net: NetName=GND Pin=U?-4
+Added Pin To Net: NetName=GND Pin=U?-4
+Added Pin To Net: NetName=GND Pin=U?-7
+Added Pin To Net: NetName=3.3V Pin=U?-8
+Added Pin To Net: NetName=3.3V Pin=U?-8
+Added Pin To Net: NetName=GND Pin=U?-9
+Change Net Name : Old Net Name=5V New Net Name=VCC
+Added Pin To Net: NetName=5V Pin=D1-A
+Added Pin To Net: NetName=5V Pin=J2-1
+Added Pin To Net: NetName=5V Pin=SW1-3
+Added Pin To Net: NetName=5V Pin=U4-7
+Added Net: Name=5V
+Added Pin To Net: NetName=NetC?_1 Pin=C?-1
+Added Pin To Net: NetName=NetC?_1 Pin=MIC?-4
+Added Net: Name=NetC?_1
+Added Pin To Net: NetName=NetC?_2 Pin=C?-2
+Added Pin To Net: NetName=NetC?_2 Pin=R?-1
+Added Pin To Net: NetName=NetC?_2 Pin=R?-2
+Added Pin To Net: NetName=NetC?_2 Pin=U?-3
+Added Net: Name=NetC?_2
+Added Pin To Net: NetName=NetR?_1 Pin=R?-1
+Added Pin To Net: NetName=NetR?_1 Pin=R?-2
+Added Pin To Net: NetName=NetR?_1 Pin=U?-6
+Added Net: Name=NetR?_1
+Added Pin To Net: NetName=NetR?_2 Pin=R?-2
+Added Pin To Net: NetName=NetR?_2 Pin=R?-2
+Added Net: Name=NetR?_2
+Added Pin To Net: NetName=NetSP?_1 Pin=SP?-1
+Added Pin To Net: NetName=NetSP?_1 Pin=SP?-1
+Added Pin To Net: NetName=NetSP?_1 Pin=U?-8
+Added Net: Name=NetSP?_1
+Added Pin To Net: NetName=NetSP?_2 Pin=SP?-2
+Added Pin To Net: NetName=NetSP?_2 Pin=SP?-2
+Added Pin To Net: NetName=NetSP?_2 Pin=U?-5
+Added Net: Name=NetSP?_2
+Added Pin To Net: NetName=SOUND Pin=R?-2
+Added Pin To Net: NetName=SOUND Pin=U?-7
+Added Net: Name=SOUND
+Added Pin To Net: NetName=SPEAKER_EN Pin=U?-1
+Added Net: Name=SPEAKER_EN
+Added Pin To Net: NetName=SPEAKER Pin=C?-1
+Added Pin To Net: NetName=SPEAKER Pin=TP8-1
+Added Pin To Net: NetName=SPEAKER Pin=U4-31
+Added Net: Name=SPEAKER
+Added Pin To Net: NetName=VCC/2 Pin=U?-1
+Added Pin To Net: NetName=VCC/2 Pin=U?-2
+Added Pin To Net: NetName=VCC/2 Pin=U?-5
+Added Net: Name=VCC/2
+Added Member To Class: ClassName=Cat_v1 Member=Component C? Capacitor
+Added Member To Class: ClassName=Cat_v1 Member=Component C? Capacitor
+Added Member To Class: ClassName=Cat_v1 Member=Component C? Capacitor
+Added Member To Class: ClassName=Cat_v1 Member=Component C? Capacitor
+Added Member To Class: ClassName=Cat_v1 Member=Component C? Capacitor
+Added Member To Class: ClassName=Cat_v1 Member=Component D1 DIO/Schottky
+Added Member To Class: ClassName=Cat_v1 Member=Component MIC? SPQ1410HR5H-B
+Added Member To Class: ClassName=Cat_v1 Member=Component R? Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component R? Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component R? Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component R? Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component R? Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component R? Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component R? Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component R? Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component R? Resistor
+Added Member To Class: ClassName=Cat_v1 Member=Component SP? Speaker
+Added Member To Class: ClassName=Cat_v1 Member=Component SP? Speaker
+Added Member To Class: ClassName=Cat_v1 Member=Component U? LMV358MM/NOPB
+Added Member To Class: ClassName=Cat_v1 Member=Component U? LMV358MM/NOPB
+Added Member To Class: ClassName=Cat_v1 Member=Component U? TPA2005D1DGNRG4

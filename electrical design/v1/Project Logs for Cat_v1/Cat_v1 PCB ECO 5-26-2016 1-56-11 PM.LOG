@@ -1,0 +1,12 @@
+Added Component: Designator=TP23(TP/SMT250)
+Added Component: Designator=TP24(TP/SMT250)
+Added Component: Designator=TP25(TP/SMT250)
+Added Component: Designator=TP26(TP/SMT250)
+Added Pin To Net: NetName=D17 Pin=TP23-1
+Added Pin To Net: NetName=D11 Pin=TP24-1
+Added Pin To Net: NetName=D9 Pin=TP25-1
+Added Pin To Net: NetName=D8 Pin=TP26-1
+Added Member To Class: ClassName=Cat_v1 Member=Component TP23 TP/Standard
+Added Member To Class: ClassName=Cat_v1 Member=Component TP24 TP/Standard
+Added Member To Class: ClassName=Cat_v1 Member=Component TP25 TP/Standard
+Added Member To Class: ClassName=Cat_v1 Member=Component TP26 TP/Standard

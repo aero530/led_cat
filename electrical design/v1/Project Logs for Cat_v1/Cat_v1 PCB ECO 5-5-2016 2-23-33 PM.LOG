@@ -1,0 +1,24 @@
+Removed Pin From Net: NetName=GND Pin=C6-1
+Removed Pin From Net: NetName=5V Pin=SW1-3
+Removed Pin From Net: NetName=VCC Pin=U2-1
+Removed Pin From Net: NetName=GND Pin=U2-2
+Removed Pin From Net: NetName=3.3V Pin=U2-5
+Removed Member From Class: ClassName=Cat_v1 Member=C6
+Change Component DesignItemId : Designator=U2 Old DesignItemId=V_REG_MIC5219SMD New DesignItemId=CMP-0062-00453-2
+Change Component Footprint: Designator=U2 Old Footprint=SOT23-5 New Footprint=TS5B_L
+Change Component Comment : Designator=U2 Old Comment=MIC5219 New Comment=LP3871ES-3.3/NOPB
+Change Component Library : Designator=U2 Old Library=Altium Content Vault New Library=Altium Content Vault
+Added Component: Designator=R27(RESC_MET_1608N)
+Added Pin To Net: NetName=VCC Pin=SW1-3
+Added Pin To Net: NetName=VCC Pin=U2-2
+Added Pin To Net: NetName=GND Pin=U2-3
+Added Pin To Net: NetName=3.3V Pin=U2-4
+Added Pin To Net: NetName=GND Pin=U2-5
+Added Pin To Net: NetName=GND Pin=U2-6
+Added Pin To Net: NetName=NetR27_1 Pin=R27-1
+Added Pin To Net: NetName=NetR27_1 Pin=U2-1
+Added Net: Name=NetR27_1
+Added Pin To Net: NetName=NetR27_2 Pin=R27-2
+Added Pin To Net: NetName=NetR27_2 Pin=SW1-2
+Added Net: Name=NetR27_2
+Added Member To Class: ClassName=Cat_v1 Member=Component R27 Resistor

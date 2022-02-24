@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=SOUND Pin=TP2-1
+Removed Pin From Net: NetName=INT2_XM Pin=TP11-1
+Removed Pin From Net: NetName=INT2_XM Pin=U4-25
+Removed Pin From Net: NetName=SOUND Pin=U4-40
+Added Pin To Net: NetName=SOUND Pin=TP1-1
+Added Pin To Net: NetName=INT2_XM Pin=TP10-1
+Added Pin To Net: NetName=SPEAKER_EN Pin=TP11-1
+Added Pin To Net: NetName=SPEAKER_EN Pin=U4-25
+Added Pin To Net: NetName=INT2_XM Pin=U4-26
+Added Pin To Net: NetName=SOUND Pin=U4-41
+Change Net Name : Old Net Name=D6 New Net Name=LED_DATA
+Added Pin To Net: NetName=A4 Pin=TP2-1
+Added Pin To Net: NetName=A4 Pin=U4-40
+Added Net: Name=A4

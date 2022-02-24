@@ -1,0 +1,7 @@
+Removed Member From Class: ClassName=Cat_v1 Member=SP1
+Added Pin To Net: NetName=NetSP2_1 Pin=SP2-1
+Added Pin To Net: NetName=NetSP2_1 Pin=U1-8
+Added Net: Name=NetSP2_1
+Added Pin To Net: NetName=NetSP2_2 Pin=SP2-2
+Added Pin To Net: NetName=NetSP2_2 Pin=U1-5
+Added Net: Name=NetSP2_2

@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=GND Pin=JP1-1
+Removed Pin From Net: NetName=NetD7_A Pin=JP1-2
+Removed Member From Class: ClassName=Cat_v1 Member=JP1
+Added Component: Designator=J3(S2B-PH-SM4-TB)
+Added Pin To Net: NetName=GND Pin=J3-1
+Added Pin To Net: NetName=NetD7_A Pin=J3-2
+Added Pin To Net: NetName=GND Pin=J3-MT1
+Added Pin To Net: NetName=GND Pin=J3-MT2
+Added Member To Class: ClassName=Cat_v1 Member=Component J3 S2B-PH-SM4-TB

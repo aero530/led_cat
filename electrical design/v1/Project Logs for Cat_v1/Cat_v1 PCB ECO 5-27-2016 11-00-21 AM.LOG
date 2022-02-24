@@ -1,0 +1,5 @@
+Added Component: Designator=TP2(TP/SMT135x70/HOOK)
+Added Pin To Net: NetName=D18 Pin=TP2-1
+Added Pin To Net: NetName=D18 Pin=U4-22
+Added Net: Name=D18
+Added Member To Class: ClassName=Cat_v1 Member=Component TP2 D18

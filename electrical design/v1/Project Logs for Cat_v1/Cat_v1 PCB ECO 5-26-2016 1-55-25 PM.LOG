@@ -1,0 +1,8 @@
+Change Component DesignItemId : Designator=TP23 Old DesignItemId=SMT Test Point 30x30mil Square New DesignItemId=SMT Test Point 250mil Circle
+Change Component DesignItemId : Designator=TP24 Old DesignItemId=SMT Test Point 30x30mil Square New DesignItemId=SMT Test Point 250mil Circle
+Change Component DesignItemId : Designator=TP25 Old DesignItemId=SMT Test Point 30x30mil Square New DesignItemId=SMT Test Point 250mil Circle
+Change Component DesignItemId : Designator=TP26 Old DesignItemId=SMT Test Point 30x30mil Square New DesignItemId=SMT Test Point 250mil Circle
+Change Component Footprint: Designator=TP23 Old Footprint=TP/SMT30x30SQ New Footprint=TP/SMT250
+Change Component Footprint: Designator=TP24 Old Footprint=TP/SMT30x30SQ New Footprint=TP/SMT250
+Change Component Footprint: Designator=TP25 Old Footprint=TP/SMT30x30SQ New Footprint=TP/SMT250
+Change Component Footprint: Designator=TP26 Old Footprint=TP/SMT30x30SQ New Footprint=TP/SMT250
